@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "camelcase": 0,
+    "no-process-exit": 0,
+    "no-use-before-define": "nofunc",
+    "no-trailing-spaces": [2, { skipBlankLines: true }]
+  },
+  "globals": {
+  },
+  "env": {
+    "node": true
+  }
+}
