@@ -12,7 +12,7 @@ var apiurl_forks = "https://api.github.com/repos/%s/%s/forks";
 
 var target_username = process.argv[2];
 var target_repo = process.argv[3];
-var maximum_forks = process.argv[4] || 64;
+var maximum_forks = process.argv[4] || 32;
 
 if (!target_username || !target_repo) {
     console.log("Usage: " + process.argv[0] + " user repo [maxforks]");
@@ -139,7 +139,7 @@ function followJSONpages(target_url, callback, json_data) {
                     var links = processLinkHeader(res.headers.link);
                     if (links.next) {
                         //console.log("follow " + links.next);
-                        setTimeout(function(){followJSONpages(links.next, callback, json_data);}, 100);
+                        setTimeout(function(){followJSONpages(links.next, callback, json_data);}, 50);
                     } else {
                         //console.log("callback!");
                         callback(json_data);
